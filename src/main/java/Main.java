@@ -8,6 +8,8 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
+        //Много информации передавать/получать не нужно, фактически лишь номер числа, и отправить лишь значение.
+        // Нечего кэшировать и нечем другим нагрузить потоки. Поэтому пускай ждут.
         ExecutorService es = Executors.newFixedThreadPool(2);
         try {
             es.submit(() -> new Server().start(Main.PART));
